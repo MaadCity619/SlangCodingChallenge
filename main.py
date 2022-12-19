@@ -5,6 +5,7 @@ import requests
 import User
 
 Users = []
+User_Sessions = []
 
 # O(n)
 def is_in_list(var, items):
@@ -40,7 +41,6 @@ for activity in activities_response.json()['activities']:
         Users.append(newUser)
 
 
-
+# O(n * m)
 for user in Users:
-    print(user.userId)
-    print(user.activityList)
+    user.make_sessions()
