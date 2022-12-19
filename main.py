@@ -1,5 +1,6 @@
 # Samuel William Ramirez Ferris
-import json
+# Algorithm complexity : O(n*m)
+
 import requests
 import User
 
@@ -60,4 +61,4 @@ temp_dict = {"user_sessions": User_Sessions}
 
 requests.post("https://api.slangapp.com/challenges/v1/activities/sessions",
 headers={"Authorization":"Basic MTUxOkFhY1VGcFJiT3pQbGc4Tm9uSmJENGN0bldCbC8veFc5U200SStHY3ZGSmc9"},
-json=temp_dict) 
+json=temp_dict)

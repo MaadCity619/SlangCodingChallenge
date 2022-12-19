@@ -8,12 +8,13 @@ class User:
         self.activityList = []
         self.userSessions = []
 
+    # O(1)
     def add_activity(self, activity):
         if activity not in self.activityList:
             self.activityList.append(activity)
 
 
-
+    #O(n)
     def make_sessions(self):
         self.activityList = sorted(self.activityList, key=itemgetter(1))
         i = 0
