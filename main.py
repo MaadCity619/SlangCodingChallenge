@@ -44,3 +44,18 @@ for activity in activities_response.json()['activities']:
 # O(n * m)
 for user in Users:
     user.make_sessions()
+
+
+# O(n * m)
+for user in Users:
+    temp_list = []
+    for Session in user.userSessions:
+        temp_list.append(Session.__dict__)
+
+    temp_dict = {user.userId: temp_list}
+    User_Sessions.append(temp_dict)
+
+temp_dict = {"user_sessions": User_Sessions}
+
+json_object = json.dumps(temp_dict, indent=4)
+print(json_object)

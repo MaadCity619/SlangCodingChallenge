@@ -1,4 +1,4 @@
-from datetime import datetime
+
 from operator import itemgetter
 import Session
 
@@ -11,7 +11,6 @@ class User:
     def add_activity(self, activity):
         if activity not in self.activityList:
             self.activityList.append(activity)
-
 
 
 
