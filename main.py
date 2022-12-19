@@ -1,6 +1,5 @@
 # Samuel William Ramirez Ferris
 import json
-
 import requests
 import User
 
@@ -22,7 +21,7 @@ def find_item_in_list(var, items):
     return None
 
 activities_response = requests.get("https://api.slangapp.com/challenges/v1/activities",
-headers={"Authorization": "Basic MTUxOkFhY1VGcFJiT3pQbGc4Tm9uSmJENGN0bldCbC8veFc5U200SStHY3ZGSmc9"})
+headers={"Authorization":"Basic MTUxOkFhY1VGcFJiT3pQbGc4Tm9uSmJENGN0bldCbC8veFc5U200SStHY3ZGSmc9"})
 
 # O(n * m)
 for activity in activities_response.json()['activities']:
@@ -57,5 +56,8 @@ for user in Users:
 
 temp_dict = {"user_sessions": User_Sessions}
 
-json_object = json.dumps(temp_dict, indent=4)
-print(json_object)
+
+
+requests.post("https://api.slangapp.com/challenges/v1/activities/sessions",
+headers={"Authorization":"Basic MTUxOkFhY1VGcFJiT3pQbGc4Tm9uSmJENGN0bldCbC8veFc5U200SStHY3ZGSmc9"},
+json=temp_dict) 
